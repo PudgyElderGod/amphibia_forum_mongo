@@ -26,7 +26,7 @@ app.config['MONGODB_SETTINGS'] = {
 # db = mongo.db
 
 # host = os.environ.get('MONGODB_URI', 'mongodb://mongodb:27017/amphibia')
-client = MongoClient(host=f'mongodb://mongodb:27017/amphibia?retryWrites=false', connect=False)
+client = MongoClient(host=f'mongodb://srv-captain--mongo:27017/amphibia?retryWrites=false', connect=False)
 db = client.get_default_database()
 users = db.users
 posts = db.posts
