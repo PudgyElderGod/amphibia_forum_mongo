@@ -21,11 +21,11 @@ app.config['MONGODB_SETTINGS'] = {
 # db = MongoEngine()
 # db.init_app(app)
 
-# app.config["MONGODB_URI"] = 'mongodb://' + 'root' + ':' + 'password' + '@' + 'srv-captain--mongo' + ':27017/'
+# app.config["MONGODB_URI"] = 'mongodb://' + 'root' + ':' + 'password' + '@' + 'srv-captain--mongo' + ':27017/' + 'amphibia'
 # client = MongoClient()
 # db = mongo.db
 
-host = os.environ.get('MONGODB_URI', 'mongodb://root:password@srv-captain--mongo:27017')
+host = os.environ.get('MONGODB_URI', 'mongodb://root:password@srv-captain--mongo:27017/mongo-db-data')
 client = MongoClient(host=f'{host}?retryWrites=false', connect=False)
 db = client.get_default_database()
 users = db.users
