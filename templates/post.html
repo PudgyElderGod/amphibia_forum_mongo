@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<a href='/'>Back to Home</a>
+<div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+        <h1>{{ post.title }}</h1>
+        {% if post.created_at %}
+        <p class='text-muted'>Created by <a href='/users/{{ post.user_id }}'>{{ post.author }}</a> on {{ post.created_at.strftime('%A, %B %d, %Y') }}
+            at {{ post.created_at.strftime('%I:%M %p') }}</p>
+        {% endif %}
+        <a href="{{ url_for('edit', id=post['_id']) }}">
+            <span class="badge badge-warning">Edit</span>
+        </a>
+        <p>{{ post.description }}</p>
+        <hr>
+
+        <!-- Show Comments -->
+        {% for comment in comments %}
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header"><a href='/users/{{ comment.user_id }}'>{{ comment.author }}</a></div>
+            <div class="card-body">
+                <p class="card-text">{{ comment.content }}</p>
+                <!-- Delete link -->
+                <form method='POST' action='/comments/{{ comment._id }}'>
+                    <button class='btn btn-link' type='submit'>Delete</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- Comment form -->
+        <form action='/posts/comments' method='post'>
+            <input type='hidden' value='{{ post._id }}' name='post_id'/>
+            <fieldset>
+                <legend>Add a Comment</legend>
+                <!-- COMMENT -->
+                <div class='form-group'>
+                    <label for='comment-content'>Message</label><br>
+                    <textarea class='form-control'
+                        id='comment-content'
+                        name='content'
+                        rows='10'
+                        placeholder='Your comment...'></textarea>
+                </div>
+            </fieldset>
+
+            <!-- BUTTON -->
+            <div class='form-group'>
+                <button class='btn btn-primary' type='submit'>Post</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+# Use root/example as user/password credentials
+version: '3.8'
+
+services:
+    mongodb:
+        image: mongo
+        restart: unless-stopped
+        command: mongod
+        ports:
+            - 27017:27017
+
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 5000:5000
+        depends_on:
+            - mongodb

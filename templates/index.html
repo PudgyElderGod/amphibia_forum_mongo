@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+    <br><br>
+    <h1>{% block title %} Welcome to the Amphibia Forum! {% endblock %}</h1>
+    <br>
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-lg-4">
+            <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-header"><a href='/{{ post._id }}'>
+                    <h2>{{ post['title'] }}</h2>
+                </a></div>
+                <div class="card-body">
+                    <small class="card-text">{{ post['created'] }}</small>
+                    <p class="card-text">{{ post['content'] }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
