@@ -1,7 +1,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/PudgyElderGod/amphibia_forum_mongo)
 ![Lines of code](https://img.shields.io/tokei/lines/github/pudgyeldergod/amphibia_forum_mongo) 
 ![Website](https://img.shields.io/website?down_color=red&down_message=Offline&up_color=green&up_message=Online&url=http%3A%2F%2Famphibia-forum.dev.thomis.gay%2F)
-![Gay](https://img.shields.io/badge/Me-Gay-blueviolet)
+![Gay](https://img.shields.io/badge/me-Gay-blueviolet)
 
 # Amphibia Forum
 The Amphibia Forum is a place for fans of the ongoing Disney cartoon Amphibia to talk about the show. It features a main message board, comments for each forum post, and user accounts/auth. 
