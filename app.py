@@ -15,18 +15,18 @@ from functools import wraps
 app = Flask(__name__)
 app.config['MONGODB_SETTINGS'] = {
     'db': 'your_database',
-    'host': 'srv-captain--mongo',
+    'host': 'localhost',
     'port': 27017
 }
 # db = MongoEngine()
 # db.init_app(app)
 
-app.config["MONGODB_URI"] = 'mongodb://' + 'root' + ':' + 'password' + '@' + 'srv-captain--mongo' + ':27017/' + 'amphibia'
+# app.config["MONGODB_URI"] = 'mongodb://' + 'root' + ':' + 'password' + '@' + 'srv-captain--mongo' + ':27017/' + 'amphibia'
 # client = MongoClient()
 # db = mongo.db
 
-host = os.environ.get('MONGODB_URI', 'mongodb://srv-captain--mongo:27017/amphibia')
-client = MongoClient(host=f'{host}?retryWrites=false', connect=False)
+# host = os.environ.get('MONGODB_URI', 'mongodb://mongodb:27017/amphibia')
+client = MongoClient(host=f'mongodb://mongodb:27017/amphibia?retryWrites=false', connect=False)
 db = client.get_default_database()
 users = db.users
 posts = db.posts
