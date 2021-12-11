@@ -21,7 +21,7 @@ app.config['MONGODB_SETTINGS'] = {
 # db = MongoEngine()
 # db.init_app(app)
 
-app.config["MONGO_URI"] = 'mongodb://' + 'root' + ':' + 'password' + '@' + 'srv-captain--mongo' + ':27017/' + 'amphibia'
+app.config["MONGODB_URI"] = 'mongodb://' + 'root' + ':' + 'password' + '@' + 'srv-captain--mongo' + ':27017/' + 'amphibia'
 # client = MongoClient()
 # db = mongo.db
 
