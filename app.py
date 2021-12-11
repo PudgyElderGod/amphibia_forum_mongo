@@ -25,7 +25,7 @@ app.config["MONGODB_URI"] = 'mongodb://' + 'root' + ':' + 'password' + '@' + 'sr
 # client = MongoClient()
 # db = mongo.db
 
-host = os.environ.get('MONGODB_URI', 'mongodb://srv-captain--mongo:27017/amphibia')
+host = os.environ.get('MONGODB_URI', 'mongodb://root:password@srv-captain--mongo:27017/amphibia')
 client = MongoClient(host=f'{host}?retryWrites=false', connect=False)
 db = client.get_default_database()
 users = db.users
