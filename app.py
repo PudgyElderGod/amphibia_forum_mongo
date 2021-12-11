@@ -15,7 +15,7 @@ from functools import wraps
 app = Flask(__name__)
 app.config['MONGODB_SETTINGS'] = {
     'db': 'your_database',
-    'host': 'localhost',
+    'host': 'srv-captain--mongo',
     'port': 27017
 }
 # db = MongoEngine()
